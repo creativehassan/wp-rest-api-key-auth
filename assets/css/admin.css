@@ -1,0 +1,430 @@
+/**
+ * Admin styles for WP REST API Key Authentication
+ */
+
+/* Main container */
+.wp-rest-api-key-auth {
+    max-width: 1200px;
+}
+
+/* Modal styles */
+.api-key-modal {
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.api-key-modal-content {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.api-key-modal-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.api-key-modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.api-key-modal-close {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+    line-height: 1;
+}
+
+.api-key-modal-close:hover {
+    color: #000;
+}
+
+.api-key-modal-body {
+    padding: 24px;
+}
+
+.api-key-modal-footer {
+    padding: 20px 24px;
+    border-top: 1px solid #ddd;
+    text-align: right;
+}
+
+.api-key-modal-footer .button {
+    margin-left: 10px;
+}
+
+/* API Key Display */
+.api-key-display {
+    text-align: center;
+}
+
+.api-key-warning {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 20px;
+    color: #856404;
+}
+
+.api-key-value {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.api-key-value input {
+    flex: 1;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.api-key-usage {
+    text-align: left;
+    background: #f8f9fa;
+    border-radius: 4px;
+    padding: 16px;
+}
+
+.api-key-usage h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.api-key-usage code {
+    display: block;
+    background: #e9ecef;
+    padding: 8px;
+    border-radius: 3px;
+    margin: 5px 0 15px 0;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+/* Status badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-active {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-inactive {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.status-expired {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+/* API Keys Table */
+.api-keys-table {
+    margin-top: 20px;
+}
+
+.api-keys-table .column-name {
+    width: 20%;
+}
+
+.api-keys-table .column-status {
+    width: 12%;
+}
+
+.api-keys-table .column-permissions {
+    width: 12%;
+}
+
+.api-keys-table .column-rate-limit {
+    width: 10%;
+}
+
+.api-keys-table .column-last-used {
+    width: 15%;
+}
+
+.api-keys-table .column-requests {
+    width: 8%;
+}
+
+.api-keys-table .column-created {
+    width: 12%;
+}
+
+.api-keys-table .column-actions {
+    width: 11%;
+}
+
+.api-keys-table .row-actions {
+    visibility: hidden;
+}
+
+.api-keys-table tr:hover .row-actions {
+    visibility: visible;
+}
+
+/* No API Keys state */
+.no-api-keys {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.no-api-keys h3 {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.no-api-keys p {
+    color: #888;
+    margin: 0;
+}
+
+/* Statistics */
+.api-key-stats {
+    margin-top: 40px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.api-key-stats h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0073aa;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Form styles */
+.form-table th {
+    width: 200px;
+}
+
+.form-table .description {
+    font-style: italic;
+    color: #666;
+}
+
+/* Loading states */
+.button.loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.button.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .api-key-modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .api-key-value {
+        flex-direction: column;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .api-keys-table .column-permissions,
+    .api-keys-table .column-rate-limit,
+    .api-keys-table .column-requests {
+        display: none;
+    }
+}
+
+/* Logs page styles */
+.logs-container {
+    margin-top: 20px;
+}
+
+.logs-tabs {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.logs-tabs .nav-tab {
+    margin-bottom: -1px;
+}
+
+.logs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.logs-table th,
+.logs-table td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.logs-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.logs-table .log-level {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.log-level.debug {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.log-level.info {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.log-level.warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.log-level.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.log-level.critical {
+    background: #dc3545;
+    color: #fff;
+}
+
+/* Settings page styles */
+.settings-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.settings-section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Charts */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin: 20px 0;
+}
+
+/* Utilities */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Notices */
+.notice.wp-rest-api-key-auth-notice {
+    border-left-color: #0073aa;
+}
+
+.notice.wp-rest-api-key-auth-notice .notice-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+} 
