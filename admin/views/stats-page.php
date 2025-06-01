@@ -373,9 +373,8 @@ document.addEventListener('DOMContentLoaded', function() {
     padding: 20px;
     flex: 1;
 }
-
-.chart-container.half-width {
-    flex: 0 0 calc(50% - 10px);
+#dailyRequestsChart, #topEndpointsChart{
+    height: 300px !important;
 }
 
 .chart-container h3 {
